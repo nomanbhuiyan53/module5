@@ -1,3 +1,6 @@
+
+import 'person.dart';
+
 void main(){
   person name = new person('noman',30,'titas');
 
@@ -10,5 +13,7 @@ class person {
   person(this._name, this.age,this.address){
     print(_name);
   }
-
+}
+class student extends className{
+ 
 }
