@@ -1,19 +1,30 @@
+void main() {
+  List<Map<String, dynamic>> fruits = [
+    {"name": "Apple", "color": "Red", "price": 2.5},
+    {"name": "Banana", "color": "Yellow", "price": 1.0},
+    {"name": "Grapes", "color": "Purple", "price": 3.0}
+  ];
 
-import 'person.dart';
+  print("Original Fruit Details before Discount:");
+  displayFruitDetails(fruits);
 
-void main(){
-  person name = new person('noman',30,'titas');
+  applyPriceDiscount(fruits, 10);
 
+  print("\nFruit Details After Applying 10% Discount:");
+  displayFruitDetails(fruits);
 }
 
-class person {
-  String _name;
-  int age;
-  String address;
-  person(this._name, this.age,this.address){
-    print(_name);
+void displayFruitDetails(List<Map<String, dynamic>> fruits) {
+  for (var fruit in fruits) {
+    print(
+        "Name: ${fruit['name']}, Color: ${fruit['color']}, Price: \$${fruit['price'].toStringAsFixed(2)}");
   }
 }
-class student extends className{
- 
+
+void applyPriceDiscount(List<Map<String, dynamic>> fruits, double discountPercentage) {
+  for (var fruit in fruits) {
+    double currentPrice = fruit['price'];
+    double discountedPrice = currentPrice - (currentPrice * (discountPercentage / 100));
+    fruit['price'] = discountedPrice;
+  }
 }
